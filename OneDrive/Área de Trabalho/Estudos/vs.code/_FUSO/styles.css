@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap');
+
+:root {
+    /* Color Palette */
+    --light-color: #fffffa;
+    --main-color: #c2dbf5;
+    --dark-color: #416f77;
+
+    /* Typography */
+    --main-font: "Tektur", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #469faf, #feffbe);
+    font-family: var(--main-font);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 4vh;
+    letter-spacing: 2px;
+}
+
+.container {
+    background: linear-gradient(135deg, var(--dark-color) 55%, var(--main-color));
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: fit-content;
+    height: fit-content;
+    padding: 10vh;
+    border-radius: 50px; 
+}
+
+.timezones {
+    display: flex;
+    width: 100%;
+}
+
+button {
+    height: 70px;
+    width: 100%;
+    border-radius: 50px;
+    color: var(--light-color);
+    margin: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: var(--main-font);
+    font-size: 3vh;
+    background-color: var(--main-color);
+    transition: color 1s, background-color 1s;
+    position: relative;
+}
+
+.botao.selecionado,
+.botao:hover {
+    background: linear-gradient(150deg, #d1d177 20%, #fffffa 95%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    background-color: transparent;
+}
+
+.botao::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left:-50px;
+    width: 0;
+    height: 100%;
+    transform: skewX(35deg);
+    z-index: -1;
+    transition: width 1s;
+}
+
+.botao:hover::before {
+    width: 150%;
+}
+
+.current {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 8vh;
+    column-gap: 3vh;
+    font-weight: 400;
+    background: linear-gradient(150deg, #d1d177 20%, #fffffa 95%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.time,
+.date {
+    height: fit-content;
+}
+
+.hora,
+.data {
+    font-size: 60px;
+    font-weight: 900;
+}
+
+@media (max-width: 1200px) {
+    body {
+        font-size: 2vh;
+    }
+
+    .hora,
+    .data {
+        font-size: 3vh;
+        font-weight: 900;
+    }
+
+    button {
+        font-size: 2vh;
+        height: 5vh;
+    }
+
+    .container {
+        padding: 4vh;
+    }
+}
