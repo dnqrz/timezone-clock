@@ -13,7 +13,7 @@ function atualizarHorarioData(timezone = "America/Sao_Paulo") {
         day: "2-digit",
         month: "2-digit",
         year: "numeric"
-    }).replace(/\//g, " . ");
+    }).replace(/\//g, ".");
 
     if (pegarIDhora) pegarIDhora.textContent = agora;
     if (pegarIDdata) pegarIDdata.textContent = dataAtual;
