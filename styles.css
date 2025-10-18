@@ -33,7 +33,7 @@ body {
 }
 
 .container {
-    background: linear-gradient(135deg, #2d6974 20%, var(--main-color));
+    background: linear-gradient(145deg, #2d6974 40%, #4b8691 70%, var(--main-color));
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
